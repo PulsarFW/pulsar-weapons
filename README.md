@@ -20,7 +20,7 @@ Weapon management system for Pulsar Framework with configurable damage modifiers
 
 ## License
 
-Copyright © 2024 Pulsar Framework. All rights reserved.
+Copyright © 2026 Pulsar Framework. All rights reserved.
 
 <div align="center">
 
