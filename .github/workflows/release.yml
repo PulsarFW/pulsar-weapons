@@ -17,10 +17,9 @@ jobs:
 
       - name: Bundle files
         run: |
-          mkdir -p ./temp/pulsar-weapons
-          cp ./{README.md,fxmanifest.lua,meleeconfig.lua} ./temp/pulsar-weapons
-          cp -r ./{client,server} ./temp/pulsar-weapons
-          cd ./temp && zip -r ../pulsar-weapons.zip ./pulsar-weapons
+          mkdir -p staging/pulsar-weapons
+          rsync -a --exclude='.github' --exclude='node_modules' --exclude='staging' . staging/pulsar-weapons/
+          cd staging && zip -r ../pulsar-weapons.zip pulsar-weapons/
 
       - name: Create release
         uses: softprops/action-gh-release@v2
