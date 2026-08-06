@@ -29,9 +29,7 @@
 
 ## Overview
 
-Applies melee weapon damage modifiers from `GlobalState["MeleeConfig"]` via `SetWeaponDamageModifier`. Doesn't register a `plsr.X` component. General weapon handling (attachments, licensing, serials) lives in `pulsar_inventory`'s `plsr.Weapons`, not here.
-
-Also ships a custom weapon pack under `metas/`/`stream/` — 5 melee, 1 less-lethal, 9 handguns, 2 SMGs, 6 rifles, plus reskinned taser/flashbang models. Each weapon has its own `weapons.meta`/`weaponarchetypes.meta`/`weaponanimations.meta`/`pedpersonality.meta`/`weaponcomponents.meta`, wired up via `data_file` in `fxmanifest.lua`; `client/weapon_names.lua` registers the in-game display names via `AddTextEntry`. These are native weapon definitions only — none of them have `pulsar_inventory` items yet, so they exist as usable weapon hashes but nothing currently hands them out (no `/giveweapon`-equivalent item, no shop entry). Wire that up separately if you want them obtainable in play.
+Applies melee weapon damage modifiers from `GlobalState["MeleeConfig"]` via `SetWeaponDamageModifier`, and ships a custom weapon pack (models/meta under `metas/`/`stream/`, display names in `client/weapon_names.lua`). Doesn't register a `plsr.X` component. General weapon handling (attachments, licensing, serials) lives in `pulsar_inventory`'s `plsr.Weapons`, not here — a custom weapon still needs an inventory item before it's obtainable in play.
 
 ---
 
